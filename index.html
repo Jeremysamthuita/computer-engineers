@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIC EGERTON CHAPEL ✝</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href=""><img class="logo1" src="logo.jpg" alt="Church Logo"></a>
+                
+            </div>
+            <nav>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul id="menu" class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="CCS Academy.html">CCS.Academy</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="Ministries.html">Ministries</a></li>
+                    <li><a href="contact form.html">Contact Us</a></li>
+                    <li><a href="#" class="donate-btn" onclick="openDonationModal()">Donate</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>GOD GIVES US POWER</h2>
+        <p>Jesus is holy, loving, and worthy of all our worship and devotion...</p>
+        <a href="contact form.html" class="btn">Contact Us</a>
+    </section>
+
+    
+
+    <!-- Donation Modal -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDonationModal()">&times;</span>
+            <h2>Church Donation</h2>
+            <p><strong>Paybill Number:</strong> 522522</p>
+            <p><strong>Account Number:</strong> 7506439</p>
+            <div class="donation-instructions">
+                <p>How to donate:</p>
+                <ol>
+                    <li>Go to M-Pesa menu</li>
+                    <li>Select Lipa Na M-Pesa</li>
+                    <li>Enter Paybill number</li>
+                    <li>Enter account number</li>
+                </ol>
+            </div>
+            <label for="donationReason">Reason for Donation:</label>
+            <input type="text" id="donationReason" placeholder="E.g., Church Project, Tithe, Offering">
+            <button onclick="submitDonation()">Donate Now</button>
+        </div>
+    </div>
+
+
+    <!-- Sermons Section -->
+<section id="sermons">
+    <h2>Recent Sermons</h2>
+        <p class="sermon-intro">Be nourished with God's word. Listen, reflect, and grow spiritually.</p>
+        <div id="sermons-container">
+            <!-- Sermons will be loaded here dynamically -->
+        </div>
+        <!-- More Sermons Button -->
+            <div class="more-sermons">
+                <a href="sermons.html" class="btn-more">More Sermons</a>
+            </div>
+</section>
+<script>
+    // Function to fetch and display three random sermons each time the page is refreshed
+    function loadSermons() {
+        fetch('sermons.html')
+            .then(response => response.text())
+            .then(data => {
+                const tempContainer = document.createElement('div');
+                tempContainer.innerHTML = data;
+
+                // Select all sermon items from the fetched content
+                const allSermons = tempContainer.querySelectorAll('.sermon-item');
+
+                // Shuffle the sermons array randomly and select the first 3
+                const shuffledSermons = [...allSermons].sort(() => 0.5 - Math.random()).slice(0, 3);
+
+                // Inject the selected three sermons into the index.html page
+                document.getElementById('sermons-container').innerHTML = '';
+                shuffledSermons.forEach(sermon => {
+                    document.getElementById('sermons-container').appendChild(sermon);
+                });
+            })
+            .catch(error => console.error('Error loading sermons:', error));
+    }
+
+    // Load sermons when the page loads
+    window.onload = loadSermons;
+</script>
+
+
+
+    <!-- About Section -->
+    <section class="about">
+        <img src="pulpit.jpg" alt="Church Interior">
+        <div class="about-text">
+            <h3>We aic egerton chapel, are Taking Small Steps to Make Earth a Better Place</h3>
+            <p>The name of the Lord is a strong tower...</p>
+            <div class="about-details">
+                <div class="about-box">
+                    <h4>Place of Heaven</h4>
+                    <p>In AIC you will feel divinity...</p>
+                </div>
+                <div class="about-box">
+                    <h4>Study Bible</h4>
+                    <p>Learn with us the Bible, enhance your wisdom...</p>
+                </div>
+            </div>
+            <a href="about.html" class="btn-more">Learn More</a>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-media">
+            <h4></h4>
+            <div class="social-icons">
+                <a href="https://www.fb.com/@aicegertonchapel" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fa fa-facebook-f"></i>
+                </a>
+                <a href="https://www.youtube.com/@aicegertonchapel" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="fa fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/your-username
+                " target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="https://www.x.com/your-username
+                " target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://www.tiktok.com/@aicegertonchapel
+                " target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok">T</i>
+                </a>
+                <a href="https://www.linkedin.com/in/your-username
+                " target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/254712345678" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fa fa-whatsapp"></i>
+                </a>
+                <a href="mailto:info@chapelschool.ac.ke" aria-label="Email">
+                    <i class="fa fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <p>&copy; 2025 A.I.C Egerton Chapel. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

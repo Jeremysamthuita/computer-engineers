@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapel Community Church Preparatory Academy</title>
+    <link rel="stylesheet" href="CCS Academy.css">
+    <script src="CCS Academy.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href=""><img class="logo1" src="ccs logo.jpg" alt="Church Logo"></a>
+                
+            </div>
+            <nav>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul id="menu" class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="CCS Academy.html">CCS.Academy</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="Ministries.html">Ministries</a></li>
+                    <li><a href="contact form.html">Contact Us</a></li>
+                    <li><a href="#" class="donate-btn" onclick="openDonationModal()">Donate</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+    </header>
+    <!-- Header Section -->
+    <div class=" two">
+        <h1>Chapel Community Church Preparatory Academy</h1>
+        <p class="verse">"Train up a child in the way he should go, and when he is old he will not depart from it." - Proverbs 22:6</p>
+        <button class="enquiry-btn" onclick="showModal('contact-modal')">Make an Enquiry</button>
+    </div>
+
+    <!-- Image Carousel -->
+    <div class="carousel">
+        <div class="carousel-inner">
+            <img src="ccs logo.jpg" alt="School Building">
+            <img src="ccs2.jpg" alt="Classroom">
+            <img src="ccs3.jpg" alt="Playground">
+            <img src="ccs.jpg" alt="School Event">
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Our School</h2>
+        <div class="about-grid">
+            <div class="card">
+                <h3>Motto</h3>
+                <p>Nurturing Global Minds</p>
+            </div>
+            <div class="card">
+                <h3>Mission</h3>
+                <p>To provide holistic education through spiritual, academic, and physical development.</p>
+            </div>
+            <div class="card">
+                <h3>Vision</h3>
+                <p>To be a leading institution in nurturing responsible global citizens.</p>
+            </div>
+            <div class="card">
+                <h3>Terms & Conditions</h3>
+                <p>View our academic policies and code of conduct.</p>
+                <button class="terms-btn">Read More</button>
+            </div>
+        </div>
+    </section>
+
+   <!-- Classes Section -->
+<section class="classes">
+    <h2>Academic Levels</h2>
+    <div class="class-list">
+        <div class="class-item">
+            <h3>Daycare</h3>
+            <p>Ages: 1-2 years</p>
+            <button class="enroll-btn" onclick="showModal('enroll-modal')">Enroll Now</button>
+        </div>
+        <div class="class-item">
+            <h3>Playgroup</h3>
+            <button class="enroll-btn" onclick="showModal('enroll-modal')">Enroll Now</button>
+        </div>
+        <div class="class-item">
+            <h3>PP1</h3>
+            <button class="enroll-btn" onclick="showModal('enroll-modal')">Enroll Now</button>
+        </div>
+        <div class="class-item">
+            <h3>PP2</h3>
+            <button class="enroll-btn" onclick="showModal('enroll-modal')">Enroll Now</button>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Staff Section -->
+    <section class="staff">
+        <h2>Our Staff</h2>
+        <div class="staff-grid">
+            <div class="staff-card">
+                <img src="teacher1.jpg" alt="Principal">
+                <h3>Rev Dr. William C Kipkoros</h3>
+                <p>Principal</p>
+            </div>
+            <!-- Repeat for other staff members -->
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contact-modal')">&times;</span>
+            <h3>Contact Form</h3>
+            <form id="contact-form">
+                <label>Name:</label>
+                <input type="text" required>
+                <label>Email:</label>
+                <input type="email" required>
+                <label>Message:</label>
+                <textarea rows="4"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+        <!-- Donation Modal -->
+        <div id="donationModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeDonationModal()">&times;</span>
+                <h2>Church Donation</h2>
+                <p><strong>Paybill Number:</strong> 522522</p>
+                <p><strong>Account Number:</strong> 7506439</p>
+                <div class="donation-instructions">
+                    <p>How to donate:</p>
+                    <ol>
+                        <li>Go to M-Pesa menu</li>
+                        <li>Select Lipa Na M-Pesa</li>
+                        <li>Enter Paybill number</li>
+                        <li>Enter account number</li>
+                    </ol>
+                </div>
+                <label for="donationReason">Reason for Donation:</label>
+                <input type="text" id="donationReason" placeholder="E.g., Church Project, Tithe, Offering">
+                <button onclick="submitDonation()">Donate Now</button>
+            </div>
+        </div>
+
+
+    <div id="enroll-modal" class="modal">
+        <!-- Enrollment form structure -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Student Enrollment</h2>
+            <form>
+                <label>Student Name:</label>
+                <input type="text" required>
+                <label>Age:</label>
+                <input type="number" required>
+                <label>Level of Study:</label>
+                <select required>
+                    <option>Daycare</option>
+                    <option>Playgroup</option>
+                    <option>PP1</option>
+                    <option>PP2</option>
+                </select>
+                <label>Admission Date:</label>
+                <input type="date" required>
+                <label>Parent/Guardian Contact:</label>
+                <input type="tel" required>
+                <label>Special Conditions:</label>
+                <textarea rows="3"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Opp Egerton Main Gate <br> 17-20115 Egerton, Njoro, <br>Nakuru Nairobi</p>
+                <p><i class="fas fa-phone"></i> +254 712611899</p>
+                <p><i class="fas fa-envelope"></i> echapelschools@gmail.com</p>
+            </div>
+                <!-- Social media icons -->
+                <div class="social-media">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://www.fb.com/@aicegertonchapel" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@aicegertonchapel" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/your-username
+                        " target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.x.com/your-username
+                        " target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@your-username
+                        " target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/your-username
+                        " target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://wa.me/254712611899" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:echapelschools@gmail.com" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Chapel Community Church Preparatory Academy</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

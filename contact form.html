@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="contact form.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container-2">
+            <div class="logo">
+                <a href=""><img class="logo1" src="logo.jpg" alt="Church Logo"></a>
+                
+            </div>
+            <nav>
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <i class="fa fa-bars"></i>
+                </div>
+                <ul id="menu" class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="CCS Academy.html">CCS Academy</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="Ministries.html">Ministries</a></li>
+                    
+                    <li><a href="contact form.html">Contact Us</a></li>
+                    <li><a href="#" class="donate-btn" onclick="openDonationModal()">Donate</a></li>
+                </ul>
+                
+            </nav>
+        </div>
+    </header>
+
+    <!-- Donation Modal -->
+    <div id="donationModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDonationModal()">&times;</span>
+            <h2>Church Donation</h2>
+            <p><strong>Paybill Number:</strong> 522522</p>
+            <p><strong>Account Number:</strong> 7506439</p>
+            <div class="donation-instructions">
+                <p>How to donate:</p>
+                <ol>
+                    <li>Go to M-Pesa menu</li>
+                    <li>Select Lipa Na M-Pesa</li>
+                    <li>Enter Paybill number</li>
+                    <li>Enter account number</li>
+                </ol>
+            </div>
+            <label for="donationReason">Reason for Donation:</label>
+            <input type="text" id="donationReason" placeholder="E.g., Church Project, Tithe, Offering">
+            <button onclick="submitDonation()">Donate Now</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h1><i class="fa fa-address-book" aria-hidden="true"></i><u> Contact Us</u></h1>
+        <p>You can get in-touch with us via email, calls, our social media pages, text messages or by visting our Church. <br>Thank You</p>
+    <div class="contact-box">
+        <div class="contact-left">
+            <h3>Inquire/ place your Order</h3>
+            <form id="form">
+                <div class="field">
+                  <label for="from_name">From Name</label>
+                  <input type="text" name="from_name" id="from_name" placeholder="Jesus Christ" required>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone</label>
+                  <input type="text" name="phone" id="phone" placeholder="+254712345678" required>
+                </div>
+                <div class="field">
+                  <label for="from_email">From Email</label>
+                  <input type="email" name="from_email" id="from_email" placeholder="username@gmail.com" required>
+                </div>
+                <div class="field">
+                  <label for="subject" >Subject</label>
+                  <input type="text" name="subject" id="subject" placeholder="Prayer request, Inquiry, Admission etc." required>
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea name="message" id="message" placeholder="How can we be of assistant to you?"required></textarea>
+                </div>
+                <div class="field">
+                  <label for="reply_to">Reply To</label>
+                  <input type="email" name="reply_to" id="reply_to"placeholder="your-Functional-email---@gmail.com" required>
+                </div>
+              
+                <input type="submit" id="button" value="Submit">
+              </form>
+              
+              <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+              
+              <script type="text/javascript">
+                emailjs.init('4L5CxJRePZtUhxeYY'); // Initialize EmailJS with your user ID
+              
+                const btn = document.getElementById('button');
+              
+                document.getElementById('form').addEventListener('submit', function(event) {
+                  event.preventDefault();
+              
+                  btn.value = 'Sending...';
+              
+                  const serviceID = 'default_service'; // Your service ID
+                  const templateID = 'Temp-001id';     // Your template ID
+              
+                  emailjs.sendForm(serviceID, templateID, this)
+                    .then(() => {
+                      btn.value = 'Send Email';
+                      alert('Sent!Thank You For Getting Intouch With Us, We Are Working On Your Message.');
+                    }, (err) => {
+                      btn.value = 'Send Email';
+                      alert('Failed to send. Error: ' + JSON.stringify(err));
+                    });
+                });
+              </script>
+              
+        </div>
+        <div class="contact-right">
+            <h3> <u> Reach Us</u></h3>
+            <table>
+                <tr>
+                     <td>Email</td>
+                     <td> <link rel="apple-touch-icon" href="favicon.png"> aicegertonchapel@gmail.com <br> echapelschools@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>Phone</td>
+                    <td> +254-799-522-418</td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>Opposite Egerton University Njoro Campus main gate<br>200 meters of the main road. <br> P.O BOX 17-20114 <br> Egerton, Nakuru kenya</td>
+                   
+                </tr>
+
+            </table>
+        </div>
+    </div>
+    </div>
+
+    <footer>
+        <div class="social-media">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="https://www.fb.com/@aicegertonchapel" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fa fa-facebook-f"></i>
+                </a>
+                <a href="https://www.youtube.com/@aicegertonchapel" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="fa fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/your-username
+                " target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                <a href="https://www.x.com/your-username
+                " target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://www.tiktok.com/@aicegertonchapel
+                " target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <i class="fa-brands fa-tiktok">T</i>
+                </a>
+                <a href="https://www.linkedin.com/in/your-username
+                " target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a href="https://wa.me/254712345678" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <i class="fa fa-whatsapp"></i>
+                </a>
+                <a href="mailto:info@chapelschool.ac.ke" aria-label="Email">
+                    <i class="fa fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+        </div>
+        <p>&copy; 2025 AIC Egerton Chapel. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
